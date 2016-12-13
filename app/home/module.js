@@ -8,18 +8,6 @@
             })
         }])
         .controller('HomePageController',['$scope','$http',function ($scope,$http) {
-            $http({
-                method: 'GET',
-                url: './in_theaters/data.json'
-            }).then(function(response) {
-                // ajax请求发送成功的回调函数
-                // console.log('成功！')
-                console.log(response)
-                $scope.movie = response.data;
-            }, function(response) {
-                // 失败的函数
-                console.log('失败！')
-                console.log(response)
-            });
+
         }]);
 })(angular);

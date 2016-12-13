@@ -8,6 +8,13 @@
             });
         }])
         .controller('Top250Controller',['$scope',function ($scope) {
-
+            //自己创建的jsonp
+            myJSONP('http://api.douban.com/v2/movie/in_theaters',
+                {start:0,count:10},
+                function (result) {
+                    console.log(result);
+                    $scope.movie=result;
+                }
+            );
         }]);
 })(angular);
