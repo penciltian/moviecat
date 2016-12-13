@@ -20,14 +20,14 @@
                 //因为callback没有名字,所以要手动创建一个名字
                 var cbName='ruby_jsonp_'+(new Date()-0);
                 url+='callback='+cbName;
-                window[cbName]=function (data) {
+                $window[cbName]=function (data) {
                     callback(data);
-                    document.body.removeChild(script);
-                    delete  window[cbName];
+                    doc.body.removeChild(script);
+                    delete  $window[cbName];
                 };
-                var script=document.createElement('script');
+                var script=doc.createElement('script');
                 script.src=url;
-                document.body.appendChild(script);
+                doc.body.appendChild(script);
             }
         }])
 })(angular);
